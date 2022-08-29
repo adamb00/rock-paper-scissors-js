@@ -211,6 +211,7 @@ object {
   padding: 8%;
   letter-spacing: 2px;
   margin: 20px auto;
+  font-size: 15px;
 }
 .resultLabel {
   position: relative;
