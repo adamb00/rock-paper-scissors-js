@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    </svg>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="titleAndScore">
+        <div class="title">
+          <div class="rockTitle">Rock</div>
+          <div class="paperTitle">paper</div>
+          <div class="scissorsTitle">scissors</div>
+        </div>
+        <div class="score">
+          <div class="scoreTitle">Score</div>
+          <div class="scoreScore"></div>
+        </div>
+      </div>
+
+      <div class="step2">
+        <div class="youPicked"></div>
+        <div class="result">
+          <div class="resultLabel"></div>
+          <button class="playAgain" id="again">play again</button>
+        </div>
+        <div class="housePicked"></div>
+      </div>
+
+      <div class="gameMap">
+        <div class="paperAndScissors">
+          <div class="btnpaper-border ">
+            <button id="paper" class="btnPaper btnItem">
+              <object
+                class="svgObj"
+                data="./images/icon-paper.svg"
+                type=""
+              ></object>
+            </button>
+          </div>
+          <div class="btnscissors-border">
+            <button id="scissors" class="btnScissors btnItem">
+              <object
+                class="svgObj"
+                data="./images/icon-scissors.svg"
+                type=""
+              ></object>
+            </button>
+          </div>
+        </div>
+        <div class="rock">
+          <div class="btnrock-border">
+            <button id="rock" class="btnRock btnItem">
+              <object
+                class="svgObj"
+                data="./images/icon-rock.svg"
+                type=""
+              ></object>
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="btnRules">
+        <button id="btnRules" class="btn">Rules</button>
+      </div>
+    </div>
+    <div class="rulesContainer">
+      <div class="rules">Rules</div>
+      <button id="x" class="btnExitRules">X</button>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://github.com/adamb00?tab=repositories" target="_blank"
+        >adamb00</a
+      >.
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

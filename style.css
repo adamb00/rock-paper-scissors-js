@@ -1,0 +1,428 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+:root {
+  --ff: 'Barlow Semi Condensed', sans-serif;
+  --color-bg-from: hsl(214, 47%, 23%);
+  --color-bg-to: hsl(237, 49%, 15%);
+  --color-scissors-from: hsl(39, 89%, 49%);
+  --color-scissors-to: hsl(40, 84%, 53%);
+  --color-paper-from: hsl(230, 89%, 62%);
+  --color-paper-to: hsl(230, 89%, 65%);
+  --color-rock-from: hsl(349, 71%, 52%);
+  --color-rock-to: hsl(349, 70%, 56%);
+  --color-dark-text: hsl(229, 25%, 31%);
+  --color-score-text: hsl(229, 64%, 46%);
+  --color-header-outline: hsl(217, 16%, 45%);
+  --color-header-font-color: hsl(217, 16%, 95%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: auto;
+  font-family: var(--ff);
+  background-image: linear-gradient(
+    to right,
+    var(--color-bg-from),
+    var(--color-bg-to)
+  );
+}
+.container {
+  padding: 30px 0;
+  margin: 50px auto;
+  width: 90%;
+}
+.titleAndScore {
+  margin: 30px auto;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid var(--color-header-outline);
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+.title {
+  color: var(--color-header-font-color);
+  text-transform: uppercase;
+  margin: auto 10px;
+  font-size: 40px;
+  line-height: 30px;
+  float: left;
+}
+.score {
+  text-align: center;
+  padding: 4px 50px;
+  border-radius: 20px;
+  background-color: var(--color-header-font-color);
+}
+.scoreTitle {
+  padding-top: 5px;
+  text-transform: uppercase;
+  color: var(--color-score-text) !important;
+}
+.scoreScore {
+  padding: 10px;
+  font-size: 50px;
+  color: var(--color-header-outline);
+}
+.gameMap {
+  background: url(./images/bg-triangle.svg) no-repeat;
+  background-position: 50%;
+  background-size: auto;
+  margin-top: 10%;
+}
+.paperAndScissors {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 5% 20%;
+}
+.rock {
+  display: flex;
+  justify-content: space-around;
+  margin: 10% 0;
+}
+.btnItem {
+  padding: 30px;
+  border-radius: 50vh;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset lightgray 0px 7px 1px;
+}
+object {
+  display: inline-block;
+  width: auto;
+  height: auto;
+}
+.btnscissors-border {
+  background-image: linear-gradient(
+    -45deg,
+    var(--color-scissors-from),
+    var(--color-scissors-to)
+  );
+  padding: 18px;
+  border-radius: 50vh;
+  box-shadow: 1px 10px 2px var(--color-scissors-to);
+}
+.btnpaper-border {
+  background-image: linear-gradient(
+    -45deg,
+    var(--color-paper-from),
+    var(--color-paper-to)
+  );
+  padding: 18px;
+  border-radius: 50vh;
+  box-shadow: 1px 10px 2px var(--color-paper-to);
+}
+.btnrock-border {
+  background-image: linear-gradient(
+    -45deg,
+    var(--color-rock-from),
+    var(--color-rock-to)
+  );
+  padding: 18px;
+  border-radius: 50vh;
+  box-shadow: 1px 10px 2px var(--color-rock-to);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.btnRules button {
+  position: absolute;
+  left: 90%;
+  width: 8%;
+  top: 55%;
+  padding: 10px;
+  color: var(--color-header-font-color);
+  background-color: transparent;
+  border: 2px solid var(--color-header-outline);
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+.rulesContainer {
+  display: none;
+  width: 400px;
+  height: 400px;
+  background: url(/images/image-rules.svg) no-repeat;
+  background-position: center;
+  background-position-y: 80%;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -90%);
+  padding: 30px;
+  justify-content: space-between;
+}
+.rules {
+  color: var(--color-dark-text);
+  font-size: 30px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+}
+.btnExitRules {
+  border: none;
+  padding: 0;
+  height: 5px;
+  font-size: 25px;
+  font-weight: 400;
+  margin: 5px;
+  background-color: white;
+  color: var(--color-header-outline);
+  opacity: 0.4;
+}
+.step2 {
+  display: none;
+  justify-content: space-between;
+  margin: 5% auto;
+  padding: 5% 5%;
+  color: var(--color-header-font-color);
+  font-size: 30px;
+  height: auto;
+}
+.youPicked div {
+  margin: 100px 0;
+  position: absolute;
+  display: block;
+  transform: scale(150%);
+}
+.housePicked div {
+  margin: 100px 0 0 10px;
+  position: absolute;
+  display: block;
+  transform: scale(150%);
+}
+.result button {
+  position: relative;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  top: 40%;
+  align-items: center;
+  width: 150px;
+  border: none;
+  text-transform: uppercase;
+  padding: 8%;
+  letter-spacing: 2px;
+  margin: 20px auto;
+}
+.resultLabel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: 40%;
+  font-size: 50px;
+  text-transform: uppercase;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  color: var(--color-header-font-color);
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    height: 70%;
+  }
+  .container {
+    max-width: 900px;
+    width: 100%;
+    height: 100%;
+  }
+  .titleAndScore {
+    margin: 30px auto;
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid var(--color-header-outline);
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .title {
+    color: var(--color-header-font-color);
+    text-transform: uppercase;
+    margin: auto 10px;
+    font-size: 30px;
+    line-height: 25px;
+    float: left;
+  }
+  .score {
+    text-align: center;
+    padding: 2px 30px;
+    border-radius: 20px;
+    background-color: var(--color-header-font-color);
+  }
+  .scoreTitle {
+    padding-top: 5px;
+    text-transform: uppercase;
+    color: var(--color-score-text) !important;
+  }
+  .scoreScore {
+    padding: 10px;
+    font-size: 40px;
+    color: var(--color-header-outline);
+  }
+  .btnRules button {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    width: 30%;
+    padding: 10px;
+    height: 4%;
+    transform: translateX(-50%);
+    color: var(--color-header-font-color);
+    background-color: transparent;
+    border: 2px solid var(--color-header-outline);
+    border-radius: 10px;
+    text-transform: uppercase;
+  }
+  .rulesContainer {
+    display: none;
+    width: 100%;
+    background: url(/images/image-rules.svg) no-repeat;
+    background-position: center;
+    background-position-y: 80%;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    padding: 30px;
+    justify-content: space-between;
+  }
+  .rules {
+    color: var(--color-dark-text);
+    font-size: 30px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+
+  .gameMap {
+    background: url(./images/bg-triangle.svg) no-repeat;
+    background-position: 50%;
+    background-size: 40%;
+    margin-top: 10%;
+  }
+  .paperAndScissors {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 5%;
+  }
+  .rock {
+    display: flex;
+    justify-content: space-around;
+    margin: 10% auto;
+  }
+  .btnItem {
+    padding: 15px;
+    border-radius: 100%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset lightgray 0px 7px 1px;
+  }
+  object {
+    display: inline-block;
+    width: auto;
+    height: auto;
+  }
+  .btnscissors-border {
+    background-image: linear-gradient(
+      -45deg,
+      var(--color-scissors-from),
+      var(--color-scissors-to)
+    );
+    padding: 15px;
+    border-radius: 100%;
+    box-shadow: 1px 10px 2px var(--color-scissors-to);
+  }
+  .btnpaper-border {
+    background-image: linear-gradient(
+      -45deg,
+      var(--color-paper-from),
+      var(--color-paper-to)
+    );
+    padding: 15px;
+    border-radius: 100%;
+    box-shadow: 1px 10px 2px var(--color-paper-to);
+  }
+  .btnrock-border {
+    background-image: linear-gradient(
+      -45deg,
+      var(--color-rock-from),
+      var(--color-rock-to)
+    );
+    padding: 15px;
+    border-radius: 100%;
+    box-shadow: 1px 10px 2px var(--color-rock-to);
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .step2 {
+    display: none;
+    justify-content: space-between;
+    margin: auto;
+    color: var(--color-header-font-color);
+    font-size: 30px;
+    height: auto;
+    float: left;
+    text-align: center;
+  }
+  .youPicked div {
+    margin: 0 8px;
+    position: relative;
+    transform: scale(80%);
+  }
+  .youPicked {
+    margin: auto;
+    position: relative;
+  }
+  .housePicked div {
+    margin: 0 15px;
+    position: absolute;
+    transform: scale(80%);
+  }
+
+  .result button {
+    position: relative;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    top: 120%;
+    align-items: center;
+    width: 170px;
+    border: none;
+    text-transform: uppercase;
+    padding: 8%;
+    letter-spacing: 3px;
+    margin: 10px auto;
+  }
+  .resultLabel {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 120%;
+    font-size: 40px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+}
