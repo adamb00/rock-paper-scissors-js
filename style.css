@@ -401,7 +401,7 @@ object {
     position: relative;
   }
   .housePicked div {
-    margin: 0 15px;
+    margin: auto;
     position: absolute;
     transform: scale(80%);
   }
