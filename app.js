@@ -76,7 +76,7 @@ allBtn.forEach(btn => {
       (you === 'rock' && house === 'rock') ||
       (you === 'paper' && house === 'paper')
     ) {
-      resultLabel.innerHTML = 'Equal';
+      resultLabel.innerHTML = 'draw';
       playAgain.style.color = 'hsl(39, 89%, 49%)';
     } else if (
       (you === 'scissors' && house === 'rock') ||

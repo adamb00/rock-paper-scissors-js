@@ -30,12 +30,12 @@ body {
   );
 }
 .container {
-  padding: 30px 0;
-  margin: 50px auto;
+  padding: 0;
+  margin: 30px auto 0 auto;
   width: 90%;
 }
 .titleAndScore {
-  margin: 30px auto;
+  margin: 30px auto 10px auto;
   padding: 10px;
   border-radius: 20px;
   border: 2px solid var(--color-header-outline);
@@ -70,18 +70,19 @@ body {
 .gameMap {
   background: url(./images/bg-triangle.svg) no-repeat;
   background-position: 50%;
-  background-size: auto;
-  margin-top: 10%;
+  background-size: 20%;
+  margin-top: 5%;
 }
 .paperAndScissors {
   display: flex;
   justify-content: space-evenly;
-  margin: 5% 20%;
+  margin: 0 20%;
+  padding: 20px;
 }
 .rock {
   display: flex;
   justify-content: space-around;
-  margin: 10% 0;
+  margin: 14% 0;
 }
 .btnItem {
   padding: 30px;
@@ -90,6 +91,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #fff;
   box-shadow: inset lightgray 0px 7px 1px;
 }
 object {
@@ -164,6 +166,7 @@ object {
   text-transform: uppercase;
 }
 .btnExitRules {
+  display: flex;
   border: none;
   padding: 0;
   height: 5px;
@@ -221,6 +224,7 @@ object {
   font-size: 11px;
   text-align: center;
   position: absolute;
+  top: 100%;
   left: 50%;
   transform: translate(-50%);
   color: var(--color-header-font-color);
@@ -231,12 +235,12 @@ object {
 
 @media screen and (max-width: 900px) {
   body {
-    height: 70%;
+    height: auto;
   }
   .container {
     max-width: 900px;
     width: 100%;
-    height: 100%;
+    height: auto;
   }
   .titleAndScore {
     margin: 30px auto;
@@ -319,12 +323,11 @@ object {
     background: url(./images/bg-triangle.svg) no-repeat;
     background-position: 50%;
     background-size: 40%;
-    margin-top: 10%;
   }
   .paperAndScissors {
     display: flex;
     justify-content: space-evenly;
-    margin: 0 5%;
+    margin: auto;
   }
   .rock {
     display: flex;
@@ -379,16 +382,17 @@ object {
   }
   .step2 {
     display: none;
+    position: relative;
     justify-content: space-between;
-    margin: auto;
+    left: 50%;
+    transform: translate(-50%);
     color: var(--color-header-font-color);
     font-size: 30px;
     height: auto;
-    float: left;
     text-align: center;
   }
   .youPicked div {
-    margin: 0 8px;
+    margin: 0 15px;
     position: relative;
     transform: scale(80%);
   }
